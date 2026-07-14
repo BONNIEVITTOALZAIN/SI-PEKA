@@ -24,7 +24,7 @@ SI-PEKA adalah aplikasi berbasis web yang dirancang untuk memudahkan pasien dala
 
 ## 🛠 Spesifikasi Teknologi & Dependensi
 Aplikasi ini dikembangkan memenuhi kriteria spesifikasi berikut:
-- **Framework Backend:** Laravel 11 (PHP >= 8.2)
+- **Framework Backend:** Laravel 13 (PHP >= 8.3)
 - **Database:** MySQL
 - **CSS Framework:** Tailwind CSS
 - **Otentikasi & Otorisasi:** Menggunakan sistem Auth bawaan Laravel yang dikustomisasi dengan Role Middleware (`admin`, `pasien`).
@@ -38,7 +38,7 @@ Aplikasi ini dikembangkan memenuhi kriteria spesifikasi berikut:
 Ikuti langkah-langkah di bawah ini untuk menjalankan project SI-PEKA di komputer lokal Anda.
 
 ### Persyaratan Sistem
-- PHP >= 8.2
+- PHP >= 8.3
 - Composer
 - MySQL Database (XAMPP/Laragon/DBngin)
 - Node.js & NPM 
@@ -55,7 +55,12 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan project SI-PEKA di komputer
    composer install
    ```
 
-3. **Konfigurasi Environment**
+3. **Install Npm**
+   ```bash
+   Npm install
+   ```
+
+4. **Konfigurasi Environment**
    Duplikat file `.env.example` menjadi `.env`:
    ```bash
    copy .env.example .env
@@ -70,23 +75,28 @@ Ikuti langkah-langkah di bawah ini untuk menjalankan project SI-PEKA di komputer
    DB_PASSWORD=
    ```
 
-4. **Generate Application Key**
+5. **Generate Application Key**
    ```bash
    php artisan key:generate
    ```
 
-5. **Jalankan Migrasi Database**
+6. **Jalankan Migrasi Database dan seeding**
    ```bash
-   php artisan migrate
+   php artisan migrate:fresh --seed
    ```
 
-6. **Buat Symlink Storage**
+7. **Buat Symlink Storage**
    Digunakan agar gambar pengumuman dan bukti pembayaran dapat diakses melalui URL.
    ```bash
    php artisan storage:link
    ```
 
-7. **Jalankan Local Server**
+8. **Jalankan Npm**
+   ```bash
+   npm run dev
+   ```
+
+8. **Jalankan Local Server**
    ```bash
    php artisan serve
    ```
