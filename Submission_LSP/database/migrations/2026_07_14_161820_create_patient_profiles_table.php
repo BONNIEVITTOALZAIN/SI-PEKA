@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('alamat');
             $table->string('no_hp');
             $table->date('tanggal_lahir');
-            $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
+            $table->enum('jenis_kelamin', ['L', 'P']);
 
             $table->timestamps();
         });
