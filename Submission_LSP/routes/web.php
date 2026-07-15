@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\AccountController as AdminAccount;
 use App\Http\Controllers\Admin\PemeriksaanController as AdminPemeriksaan;
 use App\Http\Controllers\Admin\PaymentController as AdminPayment;
 use App\Http\Controllers\Admin\AnnouncementController as AdminAnnouncement;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\ScheduleController;
 
 use App\Http\Controllers\Pasien\DashboardController as PasienDashboard;
 use App\Http\Controllers\Pasien\PemeriksaanController as PasienPemeriksaan;
@@ -40,6 +42,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/payments/{id}/verify', [AdminPayment::class, 'verify'])->name('payments.verify');
 
         Route::resource('announcements', AdminAnnouncement::class);
+        Route::resource('doctors', DoctorController::class);
+        Route::resource('schedules', ScheduleController::class);
     });
 
     // Pasien Routes

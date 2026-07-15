@@ -47,6 +47,14 @@
                         class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->routeIs('admin.announcements.*') ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600' }}">
                         <i class="fas fa-bullhorn w-6 text-center mr-2"></i> Pengumuman
                     </a>
+                    <a href="{{ route('admin.doctors.index') }}"
+                        class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->routeIs('admin.doctors.*') ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600' }}">
+                        <i class="fas fa-user-md w-6 text-center mr-2"></i> Manajemen Dokter
+                    </a>
+                    <a href="{{ route('admin.schedules.index') }}"
+                        class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->routeIs('admin.schedules.*') ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600' }}">
+                        <i class="fas fa-calendar-alt w-6 text-center mr-2"></i> Jadwal Dokter
+                    </a>
                 @elseif(Auth::user()->role === 'pasien')
                     <a href="{{ route('pasien.dashboard') }}"
                         class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->routeIs('pasien.dashboard') ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600' }}">

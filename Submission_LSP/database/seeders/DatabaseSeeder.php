@@ -48,5 +48,7 @@ class DatabaseSeeder extends Seeder
             'verified_by' => 1, // ID Admin yang pertama dibuat
             'verified_at' => now(),
         ]);
+
+        $this->call(DoctorSeeder::class);
     }
 }
