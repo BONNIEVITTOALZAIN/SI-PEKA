@@ -13,12 +13,12 @@
         @csrf
         <div class="mb-4">
             <label class="block text-sm font-medium text-slate-700 mb-1">Judul Pengumuman</label>
-            <input type="text" name="title" value="{{ old('title') }}" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">
+            <input type="text" name="judul" value="{{ old('judul') }}" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">
         </div>
 
         <div class="mb-4">
             <label class="block text-sm font-medium text-slate-700 mb-1">Isi Pengumuman</label>
-            <textarea name="content" rows="5" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">{{ old('content') }}</textarea>
+            <textarea name="isi" rows="5" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">{{ old('isi') }}</textarea>
         </div>
 
         <div class="mb-6">

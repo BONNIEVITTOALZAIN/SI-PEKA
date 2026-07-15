@@ -19,6 +19,7 @@
                     <th class="p-4">Pasien</th>
                     <th class="p-4">Keluhan</th>
                     <th class="p-4">Status</th>
+                    <th class="p-4 text-center">Catatan</th>
                     <th class="p-4 text-center">Aksi</th>
                 </tr>
             </thead>
@@ -39,6 +40,13 @@
                             <span class="px-2.5 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Selesai</span>
                         @else
                             <span class="px-2.5 py-1 text-xs font-medium bg-red-100 text-red-700 rounded-full">Ditolak</span>
+                        @endif
+                    </td>
+                    <td class="p-4 text-center">
+                        @if($pemeriksaan->catatan)
+                            <span class="px-2.5 py-1 text-xs font-medium text-slate-700 rounded-full" title="{{ $pemeriksaan->catatan }}">{{ Str::limit($pemeriksaan->catatan, 20) }}</span>
+                        @else
+                            <span class="text-slate-400">-</span>
                         @endif
                     </td>
                     <td class="p-4 flex justify-center space-x-2">

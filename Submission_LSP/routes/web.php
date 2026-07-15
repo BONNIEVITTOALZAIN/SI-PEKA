@@ -11,16 +11,16 @@ use App\Http\Controllers\Admin\AnnouncementController as AdminAnnouncement;
 use App\Http\Controllers\Pasien\DashboardController as PasienDashboard;
 use App\Http\Controllers\Pasien\PemeriksaanController as PasienPemeriksaan;
 use App\Http\Controllers\Pasien\PaymentController as PasienPayment;
+use App\Http\Controllers\HomeController as HomeController; 
 
-Route::get('/', function () {
-    return redirect()->route('login');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login']);
     Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register']);
+    Route::get('/', [HomeController::class, 'index'])->name('home');
 });
 
 Route::middleware('auth')->group(function () {
