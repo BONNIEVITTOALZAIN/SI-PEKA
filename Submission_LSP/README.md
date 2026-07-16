@@ -119,3 +119,5 @@ Aplikasi ini berjalan dengan minimal tabel berikut (ditambah tabel bawaan Larave
 4. **pemeriksaans** (Data pengajuan jadwal pemeriksaan)
 5. **payments** (Bukti konfirmasi pembayaran pemeriksaan)
 6. **announcements** (Data pengumuman dari admin)
+7. **Doctors** (Data dokter)
+8. **schedules** (Data jadwal dokter)
