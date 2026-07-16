@@ -32,7 +32,7 @@ class AnnouncementController extends Controller
         $data['created_by'] = auth()->id();
 
         if ($request->hasFile('image')) {
-            $data['image_path'] = $request->file('image')->store('announcements', 'public');
+            $data['image'] = $request->file('image')->store('announcements', 'public');
         }
 
         Announcement::create($data);
@@ -48,15 +48,15 @@ class AnnouncementController extends Controller
     public function update(Request $request, Announcement $announcement)
     {
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
+            'judul' => 'required|string|max:255',
+            'isi' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
-        $data = $request->only('title', 'content');
+        $data = $request->only('judul', 'isi');
 
         if ($request->hasFile('image')) {
-            $data['image_path'] = $request->file('image')->store('announcements', 'public');
+            $data['image'] = $request->file('image')->store('announcements', 'public');
         }
 
         $announcement->update($data);

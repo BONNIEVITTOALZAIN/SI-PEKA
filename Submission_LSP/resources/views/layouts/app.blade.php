@@ -26,7 +26,7 @@
         </div>
         <div class="flex-1 overflow-y-auto py-4">
             <nav class="space-y-1 px-3">
-                @if(Auth::user()->role === 'admin')
+                @if (Auth::user()->role === 'admin')
                     <a href="{{ route('admin.dashboard') }}"
                         class="flex items-center px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->routeIs('admin.dashboard') ? 'bg-blue-50 text-blue-700' : 'text-slate-700 hover:bg-slate-50 hover:text-blue-600' }}">
                         <i class="fas fa-home w-6 text-center mr-2"></i> Dashboard
@@ -98,28 +98,28 @@
 
         <!-- Main Content Area -->
         <main class="flex-1 overflow-y-auto p-6 lg:p-8 relative">
-            @if(session('success'))
+            @if (session('success'))
                 <div class="mb-4 bg-green-50 border-l-4 border-green-500 p-4 rounded-r shadow-sm flex items-center">
                     <i class="fas fa-check-circle text-green-500 mr-3"></i>
                     <p class="text-sm text-green-700">{{ session('success') }}</p>
                 </div>
             @endif
 
-            @if(session('error'))
+            @if (session('error'))
                 <div class="mb-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-r shadow-sm flex items-center">
                     <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
                     <p class="text-sm text-red-700">{{ session('error') }}</p>
                 </div>
             @endif
 
-            @if($errors->any())
+            @if ($errors->any())
                 <div class="mb-4 bg-red-50 border-l-4 border-red-500 p-4 rounded-r shadow-sm flex flex-col">
                     <div class="flex items-center mb-2">
                         <i class="fas fa-exclamation-circle text-red-500 mr-3"></i>
                         <p class="text-sm font-semibold text-red-700">Terdapat kesalahan:</p>
                     </div>
                     <ul class="list-disc pl-8 text-sm text-red-700">
-                        @foreach($errors->all() as $error)
+                        @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>

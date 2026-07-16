@@ -215,7 +215,6 @@
             </div>
         </section>
 
-        {{-- ===== VIDEO PROFIL KLINIK (Multimedia) ===== --}}
         <section class="max-w-6xl mx-auto px-6 py-16">
             <div class="grid md:grid-cols-2 gap-10 items-center">
                 <div>
@@ -260,6 +259,8 @@
                     <div class="grid md:grid-cols-3 gap-6">
                         @foreach ($announcements as $a)
                             <div class="bg-white rounded-xl border border-gray-100 p-5">
+                                <img src="{{ Storage::url($a->image) }}" alt="{{ $a->judul }}"
+                                    class="h-48 w-full object-cover">
                                 <p class="text-xs text-gray-400 mb-2">{{ $a->created_at->format('d M Y') }}</p>
                                 <h3 class="font-bold text-gray-900 mb-2">{{ $a->judul }}</h3>
                                 <p class="text-sm text-gray-500 leading-relaxed">{{ Str::limit($a->isi, 120) }}</p>

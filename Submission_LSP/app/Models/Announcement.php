@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 
-#[Fillable(['judul', 'isi', 'created_by'])]
+#[Fillable(['judul', 'isi', 'image', 'created_by'])]
 class Announcement extends Model
 {
     use HasFactory;

@@ -18,6 +18,8 @@ return new class extends Migration
 
             $table->text('isi');
 
+            $table->string('image')->nullable();
+
             $table->foreignId('created_by')
                 ->constrained('users')
                 ->cascadeOnDelete();

@@ -13,19 +13,19 @@
         @method('PUT')
         <div class="mb-4">
             <label class="block text-sm font-medium text-slate-700 mb-1">Judul Pengumuman</label>
-            <input type="text" name="title" value="{{ old('title', $announcement->title) }}" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">
+            <input type="text" name="judul" value="{{ old('judul', $announcement->judul) }}" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">
         </div>
 
         <div class="mb-4">
             <label class="block text-sm font-medium text-slate-700 mb-1">Isi Pengumuman</label>
-            <textarea name="content" rows="5" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">{{ old('content', $announcement->content) }}</textarea>
+            <textarea name="isi" rows="5" required class="w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 px-4 py-2 border">{{ old('isi', $announcement->isi) }}</textarea>
         </div>
 
         <div class="mb-6">
             <label class="block text-sm font-medium text-slate-700 mb-1">Gambar Baru (Opsional)</label>
-            @if($announcement->image_path)
+            @if($announcement->image)
                 <div class="mb-2">
-                    <img src="{{ Storage::url($announcement->image_path) }}" alt="Gambar" class="h-32 object-cover rounded">
+                    <img src="{{ Storage::url($announcement->image) }}" alt="Gambar" class="h-32 object-cover rounded">
                 </div>
             @endif
             <input type="file" name="image" accept="image/*" class="w-full rounded-lg border-slate-300 shadow-sm px-4 py-2 border">
